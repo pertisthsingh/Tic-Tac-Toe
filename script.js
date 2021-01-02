@@ -3,6 +3,22 @@ var restartButton = document.querySelector("button");
 let gameStatus = true;
 
 
+function checkMarkedBoxes(x,y,z){
+    var zero = document.getElementById(x).textContent;
+    var one = document.getElementById(y).textContent;
+    var two = document.getElementById(z).textContent;
+
+    if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
+        console.log("Wonn"); 
+        document.querySelector("span").textContent = zero+" Won!";
+        gameStatus=false;
+    }
+    else
+    {
+        console.log("didnt work");
+    }
+}
+
 // checking for win
 function checkForWin(){
     // for referrence of winning conditions
@@ -16,144 +32,15 @@ function checkForWin(){
     //     [0,4,8],
     //     [2,4,6],
     // ];
+    checkMarkedBoxes("0","1","2");
+    checkMarkedBoxes("0","3","6");
+    checkMarkedBoxes("6","7","8");
+    checkMarkedBoxes("2","5","8");
+    checkMarkedBoxes("1","4","7");
+    checkMarkedBoxes("3","4","5");
+    checkMarkedBoxes("0","4","8");
+    checkMarkedBoxes("2","4","6");
     
-    function checkOne(){
-        var zero = document.getElementById("0").textContent;
-        var one = document.getElementById("1").textContent;
-        var two = document.getElementById("2").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkTwo(){
-        var zero = document.getElementById("0").textContent;
-        var one = document.getElementById("3").textContent;
-        var two = document.getElementById("6").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn"); 
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkThree(){
-        var zero = document.getElementById("6").textContent;
-        var one = document.getElementById("7").textContent;
-        var two = document.getElementById("8").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkFour(){
-        var zero = document.getElementById("2").textContent;
-        var one = document.getElementById("5").textContent;
-        var two = document.getElementById("8").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkFive(){
-        var zero = document.getElementById("1").textContent;
-        var one = document.getElementById("4").textContent;
-        var two = document.getElementById("7").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkSix(){
-        var zero = document.getElementById("3").textContent;
-        var one = document.getElementById("4").textContent;
-        var two = document.getElementById("5").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkSeven(){
-        var zero = document.getElementById("0").textContent;
-        var one = document.getElementById("4").textContent;
-        var two = document.getElementById("8").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    function checkEight(){
-        var zero = document.getElementById("2").textContent;
-        var one = document.getElementById("4").textContent;
-        var two = document.getElementById("6").textContent;
-
-        if(zero!== "" && one!=="" && two!=="" && zero === one && one === two){
-            console.log("Wonn");
-            document.querySelector("span").textContent = zero+" Won!";
-            gameStatus=false;
-        }
-        else
-        {
-            console.log("didnt work");
-        }
-
-    }
-    checkOne();
-    checkTwo();
-    checkThree();
-    checkFour();
-    checkFive();
-    checkSix();
-    checkSeven();
-    checkEight();
 }
 
 function checkForDraw(){
@@ -169,7 +56,6 @@ function checkForDraw(){
     if(zero!=="" && one!=="" && two!=="" && three!=="" && four!=="" && five!=="" && six!=="" && seven!=="" && eight!=="" && gameStatus === true)
     {
         document.querySelector("span").textContent = "Game Draw!";
-        //gameStatus=false;
     }
     
 }
