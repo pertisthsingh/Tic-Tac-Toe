@@ -21,17 +21,6 @@ function checkMarkedBoxes(x,y,z){
 
 // checking for win
 function checkForWin(){
-    // for referrence of winning conditions
-    // var winningConditions = [
-    //     [0,1,2],
-    //     [0,3,6],
-    //     [6,7,8],
-    //     [2,5,8],
-    //     [1,4,7],
-    //     [3,4,5],
-    //     [0,4,8],
-    //     [2,4,6],
-    // ];
     checkMarkedBoxes("0","1","2");
     checkMarkedBoxes("0","3","6");
     checkMarkedBoxes("6","7","8");
